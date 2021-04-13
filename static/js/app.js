@@ -1,5 +1,5 @@
 //Build function to read json file using d3
-d3.json('/data/samples.json').then(({names})=>{
+d3.json('/Belly-Button-Biodiversity/data/samples.json').then(({names})=>{
 
     names.forEach(name => {
         d3.select('select').append('option').text(name);
@@ -14,7 +14,7 @@ function optionChanged() {
 
 // -------Create the DemoGraphic Table------//
 function show() {
-    d3.json('/data/samples.json').then(({metadata,samples})=>{
+    d3.json('/Belly-Button-Biodiversity/data/samples.json').then(({metadata,samples})=>{
         var sel = d3.select('select').node().value;
         var meta = metadata.filter(obj=>obj.id == sel)[0];
         var sample = samples.filter(obj=>obj.id == sel)[0];
